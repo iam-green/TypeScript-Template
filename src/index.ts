@@ -1,7 +1,4 @@
-import dotenv from 'dotenv';
-import { Log } from './module';
-
-dotenv.config();
+import 'dotenv/config';
 
 async function bootstrap() {
   // Input Code Here
