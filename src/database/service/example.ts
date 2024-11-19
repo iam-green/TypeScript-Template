@@ -34,7 +34,9 @@ export class ExampleService {
   }
 
   static async create(data: CreateExampleDto) {
-    return (await db.insert(example).values(data).returning())[0];
+    return (
+      await db.insert(example).values(data).onConflictDoNothing().returning()
+    )[0];
   }
 
   static async update(id: string, data: UpdateExampleDto) {
